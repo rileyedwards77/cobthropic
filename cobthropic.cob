@@ -1,5 +1,5 @@
 IDENTIFICATION DIVISION.
-       PROGRAM-ID. ANTHROPIC-API-HELLO.
+       PROGRAM-ID. COBTHROPIC.
        AUTHOR. YOUR-NAME.
        DATE-WRITTEN. 2025-09-09.
       
@@ -31,7 +31,7 @@ IDENTIFICATION DIVISION.
       
        PROCEDURE DIVISION.
        MAIN-PROCEDURE.
-           DISPLAY "=== COBOL Anthropic API Hello World ===".
+           DISPLAY "=== Cobthropic: COBOL + Anthropic API ===".
            DISPLAY " ".
            
            PERFORM BUILD-CURL-COMMAND.
@@ -92,4 +92,4 @@ IDENTIFICATION DIVISION.
            
            DISPLAY "=== End Response ===".
       
-       END PROGRAM ANTHROPIC-API-HELLO.
+       END PROGRAM COBTHROPIC.
