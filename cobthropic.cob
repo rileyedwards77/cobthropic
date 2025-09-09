@@ -39,7 +39,7 @@
            DISPLAY "=== Cobthropic: COBOL + Anthropic API ===".
            DISPLAY " ".
            ACCEPT WS-API-KEY FROM ENVIRONMENT "ANTHROPIC_API_KEY".
-           IF FUNCTION TRIM(WS-API-KEY) = ""
+           IF FUNCTION LENGTH(FUNCTION TRIM(WS-API-KEY)) = 0
                DISPLAY "ERROR: Environment variable ANTHROPIC_API_KEY is not set."
                STOP RUN
            END-IF.
@@ -58,7 +58,6 @@
            STRING 
                'curl -X POST https://api.anthropic.com/v1/messages '
                '-H "Content-Type: application/json" '
-               '-H "x-api-version: 2023-06-01" '
                '-H "anthropic-version: 2023-06-01" '
                '-H "x-api-key: '
                FUNCTION TRIM(WS-API-KEY)
@@ -73,7 +72,6 @@
            STRING 
                 'curl -X POST https://api.anthropic.com/v1/messages '
                 '-H "Content-Type: application/json" '
-                '-H "x-api-version: 2023-06-01" '
                 '-H "anthropic-version: 2023-06-01" '
                 '-H "x-api-key: ****..." '
                 '-d '''
